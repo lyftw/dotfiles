@@ -4,8 +4,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# autoload -Uz compinit
-
 # Set name of the theme to load.
 if [ `tput colors` != "256" ]; then
   ZSH_THEME="frisk"
@@ -15,12 +13,17 @@ else
   ZSH_THEME="powerlevel10k/powerlevel10k"
 fi
 
+# Commands alias settings
+alias ptt='ssh bbsu@ptt.cc'
+
+# Command auto-correction in Zsh 
+ENABLE_CORRECTION="false"
 
 # Show OS info when opening a new terminal
 #neofetch
 
 # Font mode for powerlevel9k
-#POWERLEVEL9K_MODE="nerdfont-complete"
+POWERLEVEL9K_MODE="nerdfont-complete"
 
 # Prompt elements
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_user dir vcs)
@@ -79,7 +82,6 @@ POWERLEVEL9K_STATUS_OK_ICON=$'\uf164'
 POWERLEVEL9K_STATUS_ERROR_ICON=$'\uf165'
 POWERLEVEL9K_STATUS_ERROR_CR_ICON=$'\uf165'
 
-
 # Programming languages
 POWERLEVEL9K_RBENV_PROMPT_ALWAYS_SHOW=true
 POWERLEVEL9K_GO_VERSION_PROMPT_ALWAYS_SHOW=true
@@ -89,9 +91,6 @@ user_with_skull() {
     echo -n "\ufb8a $(whoami)"
 }
 POWERLEVEL9K_CUSTOM_USER="user_with_skull"
-
-# Command auto-correction.
-ENABLE_CORRECTION="true"
 
 # Command execution time stamp shown in the history command output.
 HIST_STAMPS="mm/dd/yyyy"

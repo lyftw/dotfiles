@@ -81,10 +81,10 @@ set $workspace1 " 1:  "
 set $workspace2 " 2:  "
 set $workspace3 " 3:  "
 set $workspace4 " 4:  "
-set $workspace5 " 5:  "
+set $workspace5 " 5: ♫ "
 set $workspace6 " 6:  "
 set $workspace7 " 7:  "
-set $workspace8 " 8: ♫ "
+set $workspace8 " 8:  "
 set $workspace9 " 9:  "
 set $workspace0 " 10:  "
 
@@ -117,7 +117,8 @@ assign [class="firefox"]    $workspace1
 assign [class="emacs"]	   	$workspace2
 assign [class="VirtualBox"]	$workspace5
 assign [class="cmus"]		    $workspace7
-assign [class="spotify"]		$workspace7
+#for_window [class="dolphin"] move to workspace $workspace4
+for_window [class="Spotify"] move to workspace $workspace5
 
 # Enable float for some windows
 for_window [class="^Pavucontrol$"] floating enable
@@ -140,7 +141,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Resize window (you can also use the mouse for that)
 mode "resize"
@@ -177,7 +178,7 @@ client.placeholder          $magenta $magenta   $silver  $magenta
 # Start i3blocks to display a workspace bar
 bar
 {
-  position top
+  position bottom
 	status_command i3blocks
   i3bar_command i3bar -t
 	font pango: SauceCodePro Nerd Font Black 10
@@ -198,3 +199,26 @@ exec --no-startup-id compton --config ~/.config/compton/compton.conf # Composito
 exec --no-startup-id xbindkeys # Load keyboard shortcuts
 exec --no-startup-id fcitx # Start fcitx for input method (fcitx chewing)
 # exec_always --no-startup-id ~/.monitor.sh # Automatically switch within monitors
+#
+
+
+# Pulse Audio controls
+#
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 4%+ #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 4%- #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle # mute sound
+#
+
+
+# # Sreen brightness controls
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+#
+# # Touchpad controls
+#bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+#
+# # Media player controls
+#bindsym XF86AudioPlay exec playerctl play
+#bindsym XF86AudioPause exec playerctl pause
+#bindsym XF86AudioNext exec playerctl next
+#bindsym XF86AudioPrev exec playerctl previous

@@ -7,13 +7,13 @@
 command=~/.i3/i3scripts/$BLOCK_NAME
 align=center
 separator=false
-separator_block_width=20
+separator_block_width=16
 markup=pango
 
-[weather]
-command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -1 | xargs echo
-interval=3600
-color=#A4C2F4
+#[weather]
+#command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -1 | xargs echo
+#interval=3600
+#color=#A4C2F4
 
 #[mediaplayer]
 #instance=spotify
@@ -48,6 +48,7 @@ color=#f47cbf
 #color=#a9e185
 
 [cpu_usage]
+command=printf "\\uf013 " && ~/.i3/i3scripts/bandwidth
 interval=2
 color=#6cdcdf
 
@@ -61,16 +62,6 @@ interval=1
 signal=10
 color=#f47cbf
 
-#[battery]
-#interval=30
-#color=#a9e185
-
-#[wifi]
-#command=printf "\\uf1eb " && ~/.i3/i3scripts/wifi
-#instance=wlp8s0
-#interval=5
-#color=#6cdcdf
-
 [time]
 command=printf "\\uf017 " && date '+%H:%M'
 interval=5
@@ -80,4 +71,3 @@ color=#f4df62
 command=printf "\\uf073 " && date '+%B %e, %A'
 interval=60
 color=#f47cbf
-
