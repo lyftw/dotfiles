@@ -2,9 +2,9 @@
 
 **Requires [GNU stow](https://www.gnu.org/software/stow/).**
 
-To install a specific package of dotfiles (take dunst for example)
+To install a specific package of dotfiles (take i3wm for example)
 ```shell
-$ stow xorg
+$ stow i3
 ```
 
 To install everything

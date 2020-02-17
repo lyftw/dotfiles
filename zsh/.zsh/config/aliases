@@ -1,0 +1,13 @@
+# Commands alias settings
+alias ls='ls --color -hX --group-directories-first'
+alias la='ls -lAh --group-directories-first'
+alias open='xdg-open'
+
+# safer rm.
+# alias rm='rm -i'
+# alias rm -rf='rm -irf'
+
+alias ptt='ssh bbsu@ptt.cc'
+
+# bookmarks
+alias home='cd ~/'

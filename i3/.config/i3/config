@@ -77,16 +77,27 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # Name the workspaces
-set $workspace1 " 1:  "
-set $workspace2 " 2:  "
-set $workspace3 " 3:  "
-set $workspace4 " 4:  "
-set $workspace5 " 5: ♫ "
-set $workspace6 " 6:  "
-set $workspace7 " 7:  "
-set $workspace8 " 8:  "
-set $workspace9 " 9:  "
-set $workspace0 " 10:  "
+# set $workspace1 " 1:  "
+# set $workspace2 " 2:  "
+# set $workspace3 " 3:  "
+# set $workspace4 " 4:  "
+# set $workspace5 " 5:  "
+# set $workspace6 " 6:  "
+# set $workspace7 " 7:  "
+# set $workspace8 " 8:  "
+# set $workspace9 " 9:  "
+# set $workspace0 " 10:  "
+
+set $workspace1 "1:"
+set $workspace2 "2:"
+set $workspace3 "3:"
+set $workspace4 "4:"
+set $workspace5 "5:"
+set $workspace6 "6:"
+set $workspace7 "7:"
+set $workspace8 "8:"
+set $workspace9 "9:"
+set $workspace0 "10:"
 
 # Switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -176,26 +187,27 @@ client.urgent               $magenta $magenta   $silver  $magenta
 client.placeholder          $magenta $magenta   $silver  $magenta
 
 # Start i3blocks to display a workspace bar
-bar
-{
-  position bottom
-	status_command i3blocks
-  i3bar_command i3bar -t
-	font pango: SauceCodePro Nerd Font Black 10
-	colors
-	{
+#bar
+#{
+  #position bottom
+	#status_command i3blocks
+  #i3bar_command i3bar -t
+	#font pango: SauceCodePro Nerd Font Black 10
+	#colors
+	#{
     #                   Border   Background Text
-		focused_workspace   $silver  $silver    $elegant
-		active_workspace    $elegant $elegant   $magenta
-		inactive_workspace  $none    $none      $cyan
-		urgent_workspace    $acqua   $acqua     $silver
-		background          $none
-  }
-}
+	#	focused_workspace   $silver  $silver    $elegant
+	#	active_workspace    $elegant $elegant   $magenta
+	#	inactive_workspace  $none    $none      $cyan
+	#	urgent_workspace    $acqua   $acqua     $silver
+	#	background          $none
+  #}
+#}
 
 # Startup programs
-exec_always --no-startup-id feh --bg-scale ~/pictures/wallpaper.jpg # Wallpaper
-exec --no-startup-id compton --config ~/.config/compton/compton.conf # Compositor for window transparency
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/neon-genesis-evangelion-wallpaper.jpg # Wallpaper
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh # polybar
+exec --no-startup-id compton --config $HOME/.config/compton/compton.conf # Compositor for window transparency
 exec --no-startup-id xbindkeys # Load keyboard shortcuts
 exec --no-startup-id fcitx # Start fcitx for input method (fcitx chewing)
 # exec_always --no-startup-id ~/.monitor.sh # Automatically switch within monitors
@@ -205,7 +217,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 4%+ #increas
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 4%- #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle # mute sound
 
-
+workspace_auto_back_and_forth yes
 
 # # Sreen brightness controls
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
