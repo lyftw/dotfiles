@@ -56,7 +56,6 @@ ws-icon-4 = 5:;5
 ws-icon-5 = 6:;6
 ;ws-icon-default = 
 
-
 ; color
 label-focused = %icon%
 label-focused-background = ${colors.nord1}
@@ -74,7 +73,7 @@ label-urgent-background = ${colors.nord4}
 label-urgent-padding = 2
 
 ; seperator
-label-separator = |
+label-separator = 
 label-separator-foreground = ${colors.nord2}
 
 [module/workspace-name]
@@ -100,15 +99,14 @@ type = internal/date
 interval = 1.0
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = %a %H:%M
-
-date-alt = %Y-%m-%d%
+date = %H:%M
+date-alt = %Y-%m-%d %a
 
 format = <label>
 label =  %date%
 label-margin = 1
 label-foreground = ${colors.nord8}
-label-underline = ${colors.nord8}
+;label-underline = ${colors.nord8}
 
 [module/battery]
 type = internal/battery
@@ -181,21 +179,22 @@ master-mixer = Master
 ; Format 
 format-volume = <ramp-volume> <label-volume>
 
-label-muted =  muted
+label-muted =  mute 
 label-muted-foreground = ${colors.urgent}
 label-muted-underline = ${colors.urgent}
 
-ramp-volume-0 = 
+ramp-volume-0 =  
 ramp-volume-0-foreground = ${colors.success}
-ramp-volume-1 = 
+ramp-volume-1 =  
 ramp-volume-1-foreground = ${colors.notify}
-ramp-volume-2 = 
+ramp-volume-2 =  
 ramp-volume-2-foreground = ${colors.urgent}
 
 ramp-headphones-0 = 
 
 ramp-volume-foreground = ${colors.nord7}
 label-volume-foreground = ${colors.nord8}
+
 
 [module/backlight]
 type = internal/xbacklight
@@ -260,7 +259,7 @@ bar-progress-foreground-2 = ${colors.nord9}
 type = custom/text
 content = 
 content-foreground = ${colors.warning}
-content-underline = ${colors.warning}
+;content-underline = ${colors.warning}
 content-padding = 1
 
 click-left = xdotool key control+grave
@@ -298,7 +297,7 @@ format-foreground = ${colors.nord7}
 format-background = ${colors.nord0}
 
 
-label-open = "¿?"
+label-open = ""
 label-open-font = 4
 label-close = ""
 label-close-foreground = ${colors.nord7}
@@ -316,11 +315,6 @@ menu-0-0-exec = systemctl poweroff
 menu-0-0-foreground = ${colors.nord7}
 
 
-[module/search]
-type               = custom/text
-content            = 
-content-padding    = ${user.padding}
-content-background = ${colors.nord1}
-click-left         = rofi -show drun
-
-
+[module/xwindow]
+type                     = internal/xwindow
+label                    = %title:0:100:...%

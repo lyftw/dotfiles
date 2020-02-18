@@ -5,13 +5,13 @@ interval = 3
 
 format = <ramp-load> <label>
 
-ramp-load-0 = 
+ramp-load-0 = CPU
 ramp-load-0-foreground = ${colors.success}
 
-ramp-load-1 = 
+ramp-load-1 = CPU
 ramp-load-1-foreground = ${colors.warning}
 
-ramp-load-2 = 
+ramp-load-2 = CPU
 ramp-load-2-foreground = ${colors.urgent}
 
 [module/show-desktop]
@@ -27,16 +27,16 @@ interval = 3
 
 format = <ramp-used> <label>
 
-label = %gb_used%/%gb_total%
-; label = %gb_used%
+;label = %gb_used%/%gb_total%
+label = %gb_used%
 
-ramp-used-0 = 
+ramp-used-0 = RAM
 ramp-used-0-foreground = ${colors.success}
 
-ramp-used-1 = 
+ramp-used-1 = RAM
 ramp-used-1-foreground = ${colors.warning}
 
-ramp-used-2 = 
+ramp-used-2 = RAM
 ramp-used-2-foreground = ${colors.urgent}
 
 [module/github]

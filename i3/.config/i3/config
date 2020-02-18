@@ -15,7 +15,7 @@ new_window pixel
 gaps inner 6
 
 # Font for window titles.
-font pango: SauceCodePro Nerd Font Black 11
+font pango: source han sans tw 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -217,7 +217,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 4%+ #increas
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 4%- #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle # mute sound
 
-workspace_auto_back_and_forth yes
 
 # # Sreen brightness controls
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
