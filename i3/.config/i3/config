@@ -77,27 +77,15 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # Name the workspaces
-# set $workspace1 " 1:  "
-# set $workspace2 " 2:  "
-# set $workspace3 " 3:  "
-# set $workspace4 " 4:  "
-# set $workspace5 " 5:  "
-# set $workspace6 " 6:  "
-# set $workspace7 " 7:  "
-# set $workspace8 " 8:  "
-# set $workspace9 " 9:  "
-# set $workspace0 " 10:  "
-
-set $workspace1 "1:"
-set $workspace2 "2:"
-set $workspace3 "3:"
-set $workspace4 "4:"
-set $workspace5 "5:"
-set $workspace6 "6:"
-set $workspace7 "7:"
-set $workspace8 "8:"
-set $workspace9 "9:"
-set $workspace0 "10:"
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
 
 # Switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -124,12 +112,13 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace0
 
 # Always open some programs on specified workspace
-assign [class="firefox"]    $workspace1
-assign [class="emacs"]	   	$workspace2
-assign [class="VirtualBox"]	$workspace5
-assign [class="cmus"]		    $workspace7
-#for_window [class="dolphin"] move to workspace $workspace4
-for_window [class="Spotify"] move to workspace $workspace5
+#assign [class="firefox"]    $workspace1
+#assign [class="emacs"]	   	$workspace2
+#assign [class="VirtualBox"]	$workspace5
+#assign [class="cmus"]		$workspace7
+
+for_window [class="Google-chrome"] move to workspace    $workspace1
+for_window [class="Spotify"] move to workspace          $workspace5
 
 # Enable float for some windows
 for_window [class="^Pavucontrol$"] floating enable
@@ -179,8 +168,8 @@ set $silver  #e4e4e4
 set $elegant #00002c
 set $none    #00000000
 
-# Set some nice colors      border	 background text	   indicator
-client.focused              $cyan	   $cyan      $elegant $cyan
+# Set some nice colors      border	 background text	 indicator
+client.focused              $cyan	 $cyan      $elegant $cyan
 client.unfocused            $elegant $elegant   $cyan    $elegant
 client.focused_inactive     $acqua   $acqua     $silver  $acqua
 client.urgent               $magenta $magenta   $silver  $magenta
@@ -205,11 +194,12 @@ client.placeholder          $magenta $magenta   $silver  $magenta
 #}
 
 # Startup programs
-exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/neon-genesis-evangelion-wallpaper.jpg # Wallpaper
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/637981.jpg # Wallpaper
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh # polybar
 exec --no-startup-id compton --config $HOME/.config/compton/compton.conf # Compositor for window transparency
 exec --no-startup-id xbindkeys # Load keyboard shortcuts
 exec --no-startup-id fcitx # Start fcitx for input method (fcitx chewing)
+exec --no-startup-id dropbox
 # exec_always --no-startup-id ~/.monitor.sh # Automatically switch within monitors
 
 # Pulse Audio controls

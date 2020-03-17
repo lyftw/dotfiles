@@ -27,6 +27,12 @@ $ ./.install.sh
   
 * GUI
   * [Polybar](https://github.com/jaagr/polybar) - fast and easy-to-use status bar
+    * dunst
+    * 
   * [rofi](https://github.com/davatorium/rofi) - window switcher, application launcher and dmenu replacement
   * [compton](https://github.com/chjj/compton) - compositor for X11
-  * [dolphin](https://github.com/KDE/dolphin) - KDE file manager
+  * [dde-file-manager](https://github.com/linuxdeepin/dde-file-manager) - File manager for deepin desktop environment.
+  * [mpv](https://mpv.io/) - a free, open source, and cross-platform media *player*
+  * [Zathura](https://github.com/pwmt/zathura) - Zathura is a free, plugin-based document viewer
+  * [Typora](https://typora.io/) - a markdown editor, markdown reader.
+
