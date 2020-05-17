@@ -208,6 +208,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 4%- #decreas
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle # mute sound
 
 
+# Interactive screenshot by pressing printscreen
+bindsym Print exec flameshot gui
+
+
 # # Sreen brightness controls
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
