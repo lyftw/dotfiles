@@ -194,7 +194,7 @@ client.placeholder          $magenta $magenta   $silver  $magenta
 #}
 
 # Startup programs
-exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/637981.jpg # Wallpaper
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpaper/637981.jpg # Wallpaper
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh # polybar
 exec --no-startup-id compton --config $HOME/.config/compton/compton.conf # Compositor for window transparency
 exec --no-startup-id xbindkeys # Load keyboard shortcuts

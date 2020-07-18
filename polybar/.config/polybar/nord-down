@@ -1,17 +1,38 @@
 ; vim:ft=dosini
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+label-open = 
+label-close =  |
+
+menu-0-0 = 
+menu-0-0-foreground = ${colors.urgent}
+menu-0-0-padding = 2
+menu-0-0-exec = shutdown
+menu-0-1 = 
+menu-0-1-foreground = ${colors.warning}
+menu-0-1-padding = 2
+menu-0-1-exec = reboot
+menu-0-2 = 
+menu-0-2-foreground = ${colors.warning}
+menu-0-2-padding = 2
+menu-0-2-exec = logout
+
 [module/cpu]
 type = internal/cpu
-interval = 3
+interval = 1
 
 format = <ramp-load> <label>
 
-ramp-load-0 = CPU
+ramp-load-0 = 
 ramp-load-0-foreground = ${colors.success}
 
-ramp-load-1 = CPU
+ramp-load-1 = 
 ramp-load-1-foreground = ${colors.warning}
 
-ramp-load-2 = CPU
+ramp-load-2 = 
 ramp-load-2-foreground = ${colors.urgent}
 
 [module/show-desktop]
@@ -19,7 +40,7 @@ type = custom/text
 
 content = 
 
-click-left = i3-msg workspace 10:
+click-left = i3-msg workspace 25:Desktop
 
 [module/memory]
 type = internal/memory
@@ -29,14 +50,24 @@ format = <ramp-used> <label>
 
 label = %gb_used%
 
-ramp-used-0 = RAM
+ramp-used-0 = 
 ramp-used-0-foreground = ${colors.success}
 
-ramp-used-1 = RAM
+ramp-used-1 = 
 ramp-used-1-foreground = ${colors.warning}
 
-ramp-used-2 = RAM
+ramp-used-2 = 
 ramp-used-2-foreground = ${colors.urgent}
+
+[module/github]
+type= internal/github
+
+token = ${config.github-token}
+
+empty-notifications = false
+interval = 10
+
+label =  %notifications%
 
 [module/network-detail]
 type = internal/network
@@ -46,7 +77,7 @@ interval = 3
 
 format-connected = <label-connected>
 
-label-connected = %downspeed:9%  %upspeed:9%
+label-connected =  %downspeed:9%   %upspeed:9%
 label-connected-foreground = ${colors.success}
 
 [module/system-cpu-temperature]
@@ -59,12 +90,13 @@ format-foreground = ${colors.nord8}
 
 label = %output%
 ;label-padding = 1
-label-foreground = ${colors.nord4}
+;label-foreground = ${colors.nord4}
 
 [module/temperature]
 type = internal/temperature
 
 thermal-zone = ${config.thermal-zone}
+hwmon-path = ${config.hwmon-path}
 
 base-temperature = ${config.base-temperature}
 
@@ -73,18 +105,19 @@ warn-temperature = ${config.warn-temperature}
 ; Format
 format = <ramp> <label>
 format-warn = <label-warn>
-format-warn-background = ${colors.nord8}
+format-warn-background = ${colors.foreground}
 
-label-warn =  %temperature%
+label-warn =  %temperature-c%
 label-warn-padding = 1
 label-warn-foreground = ${colors.urgent}
-label-warn-background = ${colors.nord4}
+label-warn-background = ${colors.foreground}
 
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-3 = 
 ramp-4 = 
+
 
 ramp-0-foreground = ${colors.nord8}
 ramp-1-foreground = ${colors.nord8}
@@ -96,7 +129,6 @@ ramp-4-foreground = ${colors.warning}
 type = custom/script
 exec = ~/.config/polybar/scripts/info-hackspeed.sh
 tail = true
-label-foreground = ${colors.nord8}
 
 [module/weather]
 type = custom/script
@@ -104,4 +136,14 @@ exec = ~/.config/polybar/scripts/openweathermap-fullfeatured.sh
 interval = 600
 
 label-font = 4
-label-foreground = ${colors.function}
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = "  "
+format = <label>
+exec = python ~/.config/polybar/scripts/spotify_status.py -f '{artist} - {song}'
+
+[module/xwindow]
+type                     = internal/xwindow
+label                    = %title:0:100:...%
