@@ -66,7 +66,6 @@ font-2 = FontAwesome5FreeRegular:pixelsize=12
 font-3 = FontAwesome5Brands:pixelsize=8
 font-4 = 
 
-
 # Modules configure option
 # the default value in this section should work in most cases,
 # if some of them doesn't suit your environment, you can change

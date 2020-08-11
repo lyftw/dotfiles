@@ -6,7 +6,7 @@
 #                                  |___/
 
 # Default modkey
-set $mod Mod1
+set $mod Mod4
 
 # Hide titlebar
 new_window pixel
@@ -99,6 +99,10 @@ bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace0
 
+#
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
@@ -112,27 +116,8 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace0
 
 # Always open some programs on specified workspace
-#assign [class="firefox"]    $workspace1
-#assign [class="emacs"]	   	$workspace2
-#assign [class="VirtualBox"]	$workspace5
-#assign [class="cmus"]		$workspace7
-
-for_window [class="Google-chrome"] move to workspace    $workspace1
-for_window [class="Spotify"] move to workspace          $workspace5
-
-# Enable float for some windows
-for_window [class="^Pavucontrol$"] floating enable
-for_window [class="^Arandr$"] floating enable
-for_window [class="^Steam$" title="^Friends List$"] floating enable
-for_window [class="^Steam$" title="Steam - News"] floating enable
-for_window [class="^Steam$" title=".* - Chat"] floating enable
-for_window [class="^Steam$" title="^Settings$"] floating enable
-for_window [class="^Steam$" title=".* - event started"] floating enable
-for_window [class="^Steam$" title=".* CD key"] floating enable
-for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
-for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
-for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
-for_window [title="^Steam Keyboard$"] floating enable
+for_window [class="Google-chrome"] move to workspace $workspace1
+for_window [class="Spotify"]       move to workspace $workspace5 fullscreen enable
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -193,20 +178,20 @@ client.placeholder          $magenta $magenta   $silver  $magenta
   #}
 #}
 
-# Startup programs
+# Startup programs 
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpaper/637981.jpg # Wallpaper
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh # polybar
 exec --no-startup-id compton --config $HOME/.config/compton/compton.conf # Compositor for window transparency
 exec --no-startup-id xbindkeys # Load keyboard shortcuts
 exec --no-startup-id fcitx # Start fcitx for input method (fcitx chewing)
 exec --no-startup-id dropbox
+exec --no-startup-id spotify
 # exec_always --no-startup-id ~/.monitor.sh # Automatically switch within monitors
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 4%+ #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 4%- #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle # mute sound
-
 
 # Interactive screenshot by pressing printscreen
 bindsym Print exec flameshot gui

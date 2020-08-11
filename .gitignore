@@ -1,0 +1,3 @@
+# Ignore directory where vim plugin is installed
+vim/.vim/plugged/
+
