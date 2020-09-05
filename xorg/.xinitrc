@@ -9,7 +9,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
 # swap alt & super key
-setxkbmap -option altwin:swap_alt_win
+# setxkbmap -option altwin:swap_alt_win
 
 # run window manager
 exec i3

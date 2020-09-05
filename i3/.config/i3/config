@@ -6,7 +6,7 @@
 #                                  |___/
 
 # Default modkey
-set $mod Mod4
+set $mod Mod1
 
 # Hide titlebar
 new_window pixel
@@ -127,6 +127,10 @@ bindsym $mod+Shift+r restart
 
 # Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Lock i3 by betterlockscreen
+# https://github.com/pavanjadhaw/betterlockscreen
+bindsym $mod+Shift+x exec --no-startup-id betterlockscreen --lock blur
 
 # Resize window (you can also use the mouse for that)
 mode "resize"
