@@ -189,7 +189,7 @@ exec --no-startup-id compton --config $HOME/.config/compton/compton.conf # Compo
 exec --no-startup-id xbindkeys # Load keyboard shortcuts
 exec --no-startup-id fcitx # Start fcitx for input method (fcitx chewing)
 exec --no-startup-id dropbox
-exec --no-startup-id spotify
+# exec --no-startup-id spotify
 # exec_always --no-startup-id ~/.monitor.sh # Automatically switch within monitors
 
 # Pulse Audio controls
