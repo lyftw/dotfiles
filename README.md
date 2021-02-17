@@ -26,13 +26,13 @@ $ ./.install.sh
     * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) - git diff made human-readable!
   
 * GUI
+  * [xst](https://github.com/gnotclub/xst) - xst is a [st](https://st.suckless.org/) fork with some patches applied and other goodies.
   * [Polybar](https://github.com/jaagr/polybar) - fast and easy-to-use status bar
-    * dunst
-    * 
+    * dunst 
+  * [ranger](https://https://github.com/ranger/ranger) - ranger is a console file manager with VI key bindings
   * [rofi](https://github.com/davatorium/rofi) - window switcher, application launcher and dmenu replacement
   * [compton](https://github.com/chjj/compton) - compositor for X11
-  * [dde-file-manager](https://github.com/linuxdeepin/dde-file-manager) - File manager for deepin desktop environment.
   * [mpv](https://mpv.io/) - a free, open source, and cross-platform media *player*
   * [Zathura](https://github.com/pwmt/zathura) - Zathura is a free, plugin-based document viewer
   * [Typora](https://typora.io/) - a markdown editor, markdown reader.
-
+  
