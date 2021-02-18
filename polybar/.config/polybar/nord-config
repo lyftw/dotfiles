@@ -1,5 +1,3 @@
-vim:ft=dosini
-
 [config]
 # DPI value for HiDPI screen
 dpi = 100
@@ -50,7 +48,7 @@ top-right = notify alsa date
 
 # Bottom modules
 bottom-left = keyboard
-bottom-center = spotify  
+bottom-center = 
 bottom-right = cpu memory temperature
 
 systray-top = none

@@ -16,12 +16,13 @@ gaps inner 6
 
 # Font for window titles.
 font pango: source han sans tw 11
+#font pango: Noto Sans CJK TC 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec xst #xfce4-terminal
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -183,7 +184,7 @@ client.placeholder          $magenta $magenta   $silver  $magenta
 #}
 
 # Startup programs 
-exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpaper/637981.jpg # Wallpaper
+exec_always --no-startup-id hsetroot -cover $HOME/Pictures/Wallpaper/637981.jpg #Wallpaper
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh # polybar
 exec --no-startup-id compton --config $HOME/.config/compton/compton.conf # Compositor for window transparency
 exec --no-startup-id xbindkeys # Load keyboard shortcuts

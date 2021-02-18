@@ -21,9 +21,11 @@ source $ZSH/oh-my-zsh.sh
 source $ZDOTDIR/config/aliases
 source $ZDOTDIR/config/functions
 
-export PATH="$PATH:$HOME/.local/bin"
-
 # Custom enviroment variable in $ZDOTDIR/env
-for env in $ZDOTDIR/env; do
-    source $env;
-done
+#for env in $ZDOTDIR/env/*; do
+#    source $env;
+#done
+
+# 
+export PATH="$PATH:$HOME/.local/bin"
+export DOT="$HOME/dotfiles"

@@ -1,6 +1,8 @@
 # Commands alias settings
+alias ..='cd ..'
 alias ls='ls --color -hX --group-directories-first'
 alias la='ls -lAh --group-directories-first'
+alias lf='ranger'
 alias open='xdg-open'
 
 # safer rm.
