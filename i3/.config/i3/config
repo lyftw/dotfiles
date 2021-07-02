@@ -6,7 +6,7 @@
 #                                  |___/
 
 # Default modkey
-set $mod Mod1
+set $mod Mod4
 
 # Hide titlebar
 new_window pixel

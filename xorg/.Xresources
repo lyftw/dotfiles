@@ -1,5 +1,9 @@
+! x window system setting
+#include "/home/leon/.xorg/x"
+
 ! nord colorscheme
 #include "/home/leon/.xorg/nord"
 
 ! xst setting
 #include "/home/leon/.xorg/xst"
+

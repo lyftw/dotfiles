@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 
+## Add this to your wm startup file.
+
 # Terminate already running bar instances
 killall -q polybar
 
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-# Launch bar1 and bar2
-polybar -c $HOME/.config/polybar/dark-config nord-top &
-polybar -c $HOME/.config/polybar/dark-config nord-down &
+# Set path for the scripts of polybars
+export PATH="${PATH}:$HOME/.config/polybar/scripts"
 
-echo "Bars launched..."
+# Launch bar1 and bar2
+polybar -c ~/.config/polybar/config.ini main &

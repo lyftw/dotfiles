@@ -13,7 +13,7 @@ alias ptt='ssh bbsu@ptt.cc'
 
 # bookmarks
 alias home='cd ~/'
-alias dbox='cd ~/Dropbox'
+alias dbx='cd ~/Dropbox'
 
 # Python
 alias py='python'

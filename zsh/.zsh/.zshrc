@@ -22,10 +22,6 @@ source $ZDOTDIR/config/aliases
 source $ZDOTDIR/config/functions
 
 # Custom enviroment variable in $ZDOTDIR/env
-#for env in $ZDOTDIR/env/*; do
-#    source $env;
-#done
-
-# 
-export PATH="$PATH:$HOME/.local/bin"
-export DOT="$HOME/dotfiles"
+for env in $ZDOTDIR/env/*; do
+    source $env;
+done
